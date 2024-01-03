@@ -1,0 +1,43 @@
+name: rjd-hapgen # you probably want to 'snapcraft register <name>'
+title: HapGen # you probably want to 'snapcraft register <name>'
+version: '2.2.0' # just for humans, typically '1.2+git' or '1.3.2'
+summary:  Simulates case control SNP markers.  # 79 char long summary
+description: |
+        "Simulates case control SNP markers. ."
+        * The description above refers to the software: https://mathgen.stats.ox.ac.uk/genetics_software/hapgen/hapgen2.html
+        * I have packaged the software as a snap for **personal use** but I have made the snap available for free.
+        * I do not maintain the software itself. I only maintain the snap packaging. Please report software bugs to the maintainers.
+        * Report snap-specific bugs to me.
+        * I _DO_ use this snap. It _HAS BEEN tested_ on my system. I __do not__ track the latest version.
+        * __This snap works.__
+        * Packaging 'style' : Binary for linux machines.
+        * License refers to the original software, not the snapcraft 'code'.
+        * More info:
+        * Run the following to rename the snap  ```sudo snap alias rjd-hapgen.hapgen2 hapgen2```
+        * Full license details: https://mathgen.stats.ox.ac.uk/genetics_software/hapgen/LICENCE
+
+website: https://github.com/RJDan/hapgen_snap
+source-code : https://github.com/RJDan/hapgen_snap
+#icon: Rlogo.png
+
+base: core22
+grade: stable # stable, devel
+confinement: strict # strict, devmode, classic
+#license:  # GPL-3.0-only
+
+apps:
+    hapgen2:
+        command: hapgen2
+        plugs:
+          - home
+          - removable-media
+
+parts:
+    hapgen:
+        plugin: dump
+        source: https://mathgen.stats.ox.ac.uk/genetics_software/hapgen/download/builds/x86_64/v2.2.0/hapgen2_x86_64.tar.gz
+        organize:
+            "hapgen" : bin/
+#            "Icon_230417.svg" : snap/Icon_230417.svg
+#        build-packages:
+#        stage-packages:
