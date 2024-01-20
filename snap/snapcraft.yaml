@@ -16,6 +16,7 @@ description: |
         * Run the following to rename the snap  ```sudo snap alias rjd-hapgen.hapgen2 hapgen2```
         * Full license details: https://mathgen.stats.ox.ac.uk/genetics_software/hapgen/LICENCE
 
+contact: https://github.com/RJDan/hapgen_snap
 website: https://github.com/RJDan/hapgen_snap
 source-code : https://github.com/RJDan/hapgen_snap
 #icon: Rlogo.png
